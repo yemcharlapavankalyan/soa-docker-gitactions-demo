@@ -1,6 +1,7 @@
 services:
   postgresdb:
     image: postgres:16-alpine
+    platform: linux/amd64
     container_name: postgres-db
     environment:
       POSTGRES_USER: postgres
@@ -15,6 +16,7 @@ services:
 
   backend:
     image: yemcharlapavankalyan/docker-git-actions-backend:latest
+    platform: linux/amd64
     container_name: docker-springboot
     ports:
       - "2025:2000"
@@ -26,6 +28,7 @@ services:
 
   frontend:
     image: yemcharlapavankalyan/docker-git-actions-frontend:latest
+    platform: linux/amd64
     container_name: docker-react
     ports:
       - "3000:80"
